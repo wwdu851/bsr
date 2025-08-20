@@ -1,0 +1,29 @@
+{
+  "id": "S205",
+  "line": "s2",
+  "origin": "huangtudian",
+  "destination": "yanqing",
+  "schedule": [
+    {
+      "station_id": "huangtudian",
+      "arrival_time": null,
+      "departure_time": "18:18"
+    },
+    {
+      "station_id": "nankou",
+      "arrival_time": "18:44",
+      "departure_time": "18:49"
+    },
+    {
+      "station_id": "badaling",
+      "arrival_time": "19:31",
+      "departure_time": "19:39"
+    },
+    {
+      "station_id": "yanqing",
+      "arrival_time": "19:54",
+      "departure_time": null
+    }
+  ],
+  "days_of_operation": [0,1,2,3,4,5,6]
+}

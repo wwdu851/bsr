@@ -1,0 +1,170 @@
+[
+  {
+    "id": "liangxiang",
+    "name": "Liangxiang",
+    "latitude": 39.739984,
+    "longitude": 116.150210,
+    "lines": ["subcenter"]
+  },
+  {
+    "id": "beijingxi",
+    "name": "Beijingxi",
+    "latitude": 39.895279,
+    "longitude": 116.315147,
+    "lines": ["subcenter"]
+  },
+  {
+    "id": "beijing",
+    "name": "Beijing",
+    "latitude": 39.902267,
+    "longitude": 116.421003,
+    "lines": ["subcenter"]
+  },
+  {
+    "id": "beijingdong",
+    "name": "Beijingdong",
+    "latitude": 39.901461,
+    "longitude": 116.478679,
+    "lines": ["subcenter"]
+  },
+  {
+    "id": "tongzhou",
+    "name": "Tongzhou",
+    "latitude": 39.896234,
+    "longitude": 116.657129,
+    "lines": ["subcenter"]
+  },
+  {
+    "id": "qiaozhuangdong",
+    "name": "Qiaozhuangdong",
+    "latitude": 39.892822,
+    "longitude": 116.690903,
+    "lines": ["subcenter"]
+  },
+  {
+    "id": "tongzhouxi",
+    "name": "Tongzhouxi",
+    "latitude": 39.903479,
+    "longitude": 116.621284,
+    "lines": ["tongmi"]
+  },
+  {
+    "id": "shunyi",
+    "name": "Shunyi",
+    "latitude": 40.124791,
+    "longitude": 116.639721,
+    "lines": ["tongmi"]
+  },
+  {
+    "id": "niulanshan",
+    "name": "Niulanshan",
+    "latitude": 40.202145,
+    "longitude": 116.642543,
+    "lines": ["tongmi"]
+  },
+  {
+    "id": "huairou",
+    "name": "Huairou",
+    "latitude": 40.315970,
+    "longitude": 116.643104,
+    "lines": ["tongmi"]
+  },
+  {
+    "id": "yanqihu",
+    "name": "Yanqihu",
+    "latitude": 40.372599,
+    "longitude": 116.653382,
+    "lines": ["tongmi", "huaimi"]
+  },
+  {
+    "id": "huairoubei",
+    "name": "Huairoubei",
+    "latitude": 40.408023,
+    "longitude": 116.686687,
+    "lines": ["tongmi", "huaimi"]
+  },
+  {
+    "id": "miyunbei",
+    "name": "Miyunbei",
+    "latitude": 40.395602,
+    "longitude": 116.856546,
+    "lines": ["tongmi"]
+  },
+  {
+    "id": "beijingbei",
+    "name": "Beijingbei",
+    "latitude": 39.940977,
+    "longitude": 116.347967,
+    "lines": ["huaimi"]
+  },
+  {
+    "id": "qinghe",
+    "name": "Qinghe",
+    "latitude": 40.041029,
+    "longitude": 116.306038,
+    "lines": ["huaimi"]
+  },
+  {
+    "id": "changpingbei",
+    "name": "Changpingbei",
+    "latitude": 40.229890,
+    "longitude": 116.226967,
+    "lines": ["huaimi"]
+  },
+  {
+    "id": "heishansi",
+    "name": "Heishansi",
+    "latitude": 40.488960,
+    "longitude": 116.789759,
+    "lines": ["huaimi"]
+  },
+  {
+    "id": "gubeikou",
+    "name": "Gubeikou",
+    "latitude": 40.690450,
+    "longitude": 117.135538,
+    "lines": ["huaimi"]
+  },
+  {
+    "id": "huangtudian",
+    "name": "Huangtudian",
+    "latitude": 40.068281,
+    "longitude": 116.357499,
+    "lines": ["s2"]
+  },
+  {
+    "id": "nankou",
+    "name": "Nankou",
+    "latitude": 40.237843,
+    "longitude": 116.123069,
+    "lines": ["s2"]
+  },
+  {
+    "id": "badaling",
+    "name": "Badaling",
+    "latitude": 40.358639,
+    "longitude": 115.995546,
+    "lines": ["s2"]
+  },
+  {
+    "id": "kangzhuang",
+    "name": "Kangzhuang",
+    "latitude": 40.378696,
+    "longitude": 115.892061,
+    "lines": ["s2"]
+  },
+  {
+    "id": "shacheng",
+    "name": "Shacheng",
+    "latitude": 40.396241,
+    "longitude": 115.510876,
+    "lines": ["s2"]
+  },
+  {
+    "id": "yanqing",
+    "name": "Yanqing",
+    "latitude": 40.435401,
+    "longitude": 115.976186,
+    "lines": ["s2"]
+  }
+]

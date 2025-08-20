@@ -1,0 +1,30 @@
+{
+    "id": "S105",
+    "line": "subcenter",
+    "origin": "liangxiang",
+    "destination": "qiaozhuangdong",
+    "schedule": [
+      {
+        "station_id": "liangxiang",
+        "arrival_time": null,
+        "departure_time": "07:11"
+      },
+      {
+        "station_id": "beijingxi",
+        "arrival_time": "07:38",
+        "departure_time": "07:48"
+      },
+      {
+        "station_id": "beijing",
+        "arrival_time": "08:02",
+        "departure_time": "08:06"
+      },
+      {
+        "station_id": "qiaozhuangdong",
+        "arrival_time": "08:30",
+        "departure_time": null
+      }
+    ],
+    "days_of_operation": [0,1,2,3,4,5,6]
+  }
+  

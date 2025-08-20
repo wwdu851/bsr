@@ -1,0 +1,11 @@
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xcworkspace
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.app
+Pods/
+

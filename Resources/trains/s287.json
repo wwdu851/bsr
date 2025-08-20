@@ -1,0 +1,34 @@
+{
+  "id": "S287",
+  "line": "s2",
+  "origin": "huangtudian",
+  "destination": "shacheng",
+  "schedule": [
+    {
+      "station_id": "huangtudian",
+      "arrival_time": null,
+      "departure_time": "10:00"
+    },
+    {
+      "station_id": "nankou",
+      "arrival_time": "10:26",
+      "departure_time": "10:28"
+    },
+    {
+      "station_id": "badaling",
+      "arrival_time": "11:11",
+      "departure_time": "11:14"
+    },
+    {
+      "station_id": "kangzhuang",
+      "arrival_time": "11:26",
+      "departure_time": "11:41"
+    },
+    {
+      "station_id": "shacheng",
+      "arrival_time": "12:17",
+      "departure_time": null
+    }
+  ],
+  "days_of_operation": [0,1,5,6]
+}

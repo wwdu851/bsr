@@ -1,0 +1,30 @@
+{
+    "id": "S103",
+    "line": "subcenter",
+    "origin": "liangxiang",
+    "destination": "tongzhou",
+    "schedule": [
+      {
+        "station_id": "liangxiang",
+        "arrival_time": null,
+        "departure_time": "06:48"
+      },
+      {
+        "station_id": "beijingxi",
+        "arrival_time": "07:13",
+        "departure_time": "07:15"
+      },
+      {
+        "station_id": "beijing",
+        "arrival_time": "07:29",
+        "departure_time": "07:33"
+      },
+      {
+        "station_id": "tongzhou",
+        "arrival_time": "07:52",
+        "departure_time": null
+      }
+    ],
+    "days_of_operation": [0,1,2,3,4,5,6]
+  }
+  

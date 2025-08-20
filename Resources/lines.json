@@ -1,0 +1,56 @@
+[
+  {
+    "id": "s2",
+    "name": "S2",
+    "stations": [
+      "huangtudian",
+      "nankou",
+      "badaling",
+      "kangzhuang",
+      "shacheng",
+      "yanqing"
+    ],
+    "fare_table_id": "fare_S2"
+  },
+  {
+    "id": "subcenter",
+    "name": "Sub-Center",
+    "stations": [
+      "liangxiang",
+      "beijingxi",
+      "beijing",
+      "beijingdong",
+      "tongzhou",
+      "qiaozhuangdong"
+    ],
+    "fare_table_id": "fare_subcenter"
+  },
+  {
+    "id": "tongmi",
+    "name": "Tongmi",
+    "stations": [
+      "tongzhouxi",
+      "shunyi",
+      "niulanshan",
+      "huairou",
+      "yanqihu",
+      "huairoubei",
+      "miyunbei"
+    ],
+    "fare_table_id": "fare_tongmi"
+  },
+  {
+    "id": "huaimi",
+    "name": "Huairou-Miyun",
+    "stations": [
+      "beijingbei",
+      "qinghe",
+      "changpingbei",
+      "yanqihu",
+      "huairoubei",
+      "heishansi",
+      "gubeikou"
+    ],
+    "fare_table_id": "fare_tongmi"
+  }
+]

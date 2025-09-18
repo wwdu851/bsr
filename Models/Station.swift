@@ -17,7 +17,8 @@ class Station: Codable {
     var longitude: Double
     var lines: [String]
     
-    public init(name: String, latitude: String, longitude: Double, lines: [String]) {
+    public init(id: String, name: String, latitude: Double, longitude: Double, lines: [String]) {
+        self.id = id
         self.name = name
         self.latitude = latitude
         self.longitude = longitude

@@ -10,13 +10,6 @@ import SwiftData
 
 @main
 struct bsrApp: App {
-    
-    init() {
-        Task {
-            await importDataIfNeeded()
-        }
-    }
-    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Station.self,
@@ -26,7 +19,14 @@ struct bsrApp: App {
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            
+            Task { @MainActor in
+                let context = ModelContext(container)
+                DataImporter.importInitialData(context: context)
+            }
+            
+            return container
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
@@ -37,12 +37,5 @@ struct bsrApp: App {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
-    }
-    
-    // 异步导入数据
-    @MainActor
-    private func importDataIfNeeded() async {
-        let context = ModelContext(sharedModelContainer)
-        DataImporter.importInitialData(context: context)
     }
 }

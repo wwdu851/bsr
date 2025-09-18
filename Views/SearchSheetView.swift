@@ -6,28 +6,29 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SearchSheetView: View {
     @Binding var origin: String
     @Binding var destination: String
+    
     let editingField: FieldKind
 
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focusedField: FieldKind?
 
-    // Test stations
-    let stations = ["Beijing", "Beijing Chaoyang", "Tongzhou", "Huangcun", "Yizhuang", "Changping", "Mentougou", "Yanqing", "Sub-Center", "Shunyi", "Badaling"]
+    
+    @Query var allStations: [Station]
+
+    private var filteredStations: [Station] {
+        let q = currentText.trimmingCharacters(in: .whitespacesAndNewlines)
+        return q.isEmpty
+            ? allStations
+            : allStations.filter { $0.name.localizedCaseInsensitiveContains(q) }
+    }
 
     private var currentText: String {
         editingField == .origin ? origin : destination
-    }
-
-    // Station filtering based on text
-    private var filteredStations: [String] {
-        let q = currentText.trimmingCharacters(in: .whitespacesAndNewlines)
-        return q.isEmpty
-            ? stations
-            : stations.filter { $0.localizedCaseInsensitiveContains(q) }
     }
 
     var body: some View {
@@ -79,13 +80,13 @@ struct SearchSheetView: View {
                 ForEach(filteredStations, id: \.self) { station in
                     Button {
                         if editingField == .origin {
-                            origin = station
+                            origin = station.name
                         } else {
-                            destination = station
+                            destination = station.name
                         }
                         dismiss()
                     } label: {
-                        Text(station)
+                        Text(station.name)
                     }
                     
                 }

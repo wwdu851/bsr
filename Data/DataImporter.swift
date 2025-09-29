@@ -15,14 +15,24 @@ class DataImporter {
             return
         }
         
-        print ("Data import is initiated")
+        print("Station data import is initiated")
         StationData.importStations(context: context)
-        print ("Data import is finished")
+        print("Station data import is finished")
+        
+        print("Train data import is initiated")
+        TrainData.importTrains(context: context)
+        print("Train data import is finished")
+        
+        print("Line data import is initiated")
+        LineData.importLines(context: context)
+        print("Line data import is finished")
     }
     
     private static func hasDataBeenImported(context: ModelContext) -> Bool {
         let stationCount = try? context.fetchCount(FetchDescriptor<Station>())
-        return (stationCount ?? 0) > 0
+        let lineCount = try? context.fetchCount(FetchDescriptor<Line>())
+        let trainCount = try? context.fetchCount(FetchDescriptor<Train>())
+        return (stationCount ?? 0) > 0 && (lineCount ?? 0) > 0 && (trainCount ?? 0) > 0
     }
 }
 

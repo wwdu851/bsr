@@ -13,6 +13,8 @@ struct bsrApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Station.self,
+            Line.self,
+            Train.self,
             Item.self
         ])
         

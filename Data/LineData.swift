@@ -17,9 +17,15 @@ class LineData {
             return
         }
         do {
-            let lines = try? JSONDecoder().decode([Line].self, from: lineData)
+            guard let lines = try? JSONDecoder().decode([Line].self, from: lineData) else {
+                return
+            }
+            for line in lines {
+                context.insert(line)
+            }
+            try context.save()
         } catch {
-            print("")
+            print("Could not save lines: \(error)")
         }
         
     }

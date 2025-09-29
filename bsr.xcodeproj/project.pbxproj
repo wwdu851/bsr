@@ -29,7 +29,6 @@
 		3DE96E8E2E5319E2001B1573 /* s201.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E772E5319E2001B1573 /* s201.json */; };
 		3DE96E8F2E5319E2001B1573 /* s205.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E7B2E5319E2001B1573 /* s205.json */; };
 		3DE96E902E5319E2001B1573 /* s103.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E752E5319E2001B1573 /* s103.json */; };
-		3DE96E912E5319E2001B1573 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E722E5319E2001B1573 /* README.md */; };
 		3DE96E922E5319E2001B1573 /* s203.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E792E5319E2001B1573 /* s203.json */; };
 		3DE96E932E5319E2001B1573 /* s288.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E842E5319E2001B1573 /* s288.json */; };
 		3DE96E942E5319E2001B1573 /* s287.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E832E5319E2001B1573 /* s287.json */; };
@@ -262,7 +261,6 @@
 				3DE96E8E2E5319E2001B1573 /* s201.json in Resources */,
 				3DE96E8F2E5319E2001B1573 /* s205.json in Resources */,
 				3DE96E902E5319E2001B1573 /* s103.json in Resources */,
-				3DE96E912E5319E2001B1573 /* README.md in Resources */,
 				3DE96E922E5319E2001B1573 /* s203.json in Resources */,
 				3DE96E932E5319E2001B1573 /* s288.json in Resources */,
 				3DE96E942E5319E2001B1573 /* s287.json in Resources */,
@@ -284,9 +282,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE96E612E4B3E5E001B1573 /* ContentView.swift in Sources */,
+				3D7291BA2E6073C100CE9955 /* DataImporter.swift in Sources */,
+				3D7291BB2E6073C500CE9955 /* TrainData.swift in Sources */,
+				3D7291B72E60736600CE9955 /* Station.swift in Sources */,
+				3D7291BC2E6073CA00CE9955 /* StationData.swift in Sources */,
+				3D7291B92E60737000CE9955 /* Train.swift in Sources */,
 				3DE96E632E4B3E5E001B1573 /* Item.swift in Sources */,
+				3D7291B82E60736C00CE9955 /* Line.swift in Sources */,
 				3DE96E6F2E4C83F8001B1573 /* SearchSheetView.swift in Sources */,
 				3DE96E5F2E4B3E5E001B1573 /* bsrApp.swift in Sources */,
+				3D7291BD2E6073CE00CE9955 /* LineData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

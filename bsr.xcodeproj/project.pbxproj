@@ -14,6 +14,7 @@
 		3D7291BB2E6073C500CE9955 /* TrainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA42E547D28001B1573 /* TrainData.swift */; };
 		3D7291BC2E6073CA00CE9955 /* StationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA22E547D0B001B1573 /* StationData.swift */; };
 		3D7291BD2E6073CE00CE9955 /* LineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA32E547D21001B1573 /* LineData.swift */; };
+		3DA227952EB3798500128B0D /* TimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA227942EB3797E00128B0D /* TimeTableView.swift */; };
 		3DE96E5F2E4B3E5E001B1573 /* bsrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E5E2E4B3E5E001B1573 /* bsrApp.swift */; };
 		3DE96E612E4B3E5E001B1573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E602E4B3E5E001B1573 /* ContentView.swift */; };
 		3DE96E632E4B3E5E001B1573 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E622E4B3E5E001B1573 /* Item.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DA227942EB3797E00128B0D /* TimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableView.swift; sourceTree = "<group>"; };
 		3DE96E5B2E4B3E5E001B1573 /* bsr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bsr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE96E5E2E4B3E5E001B1573 /* bsrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bsrApp.swift; sourceTree = "<group>"; };
 		3DE96E602E4B3E5E001B1573 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		3DE96E9E2E531CBD001B1573 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DA227942EB3797E00128B0D /* TimeTableView.swift */,
 				3DE96E6E2E4C83F8001B1573 /* SearchSheetView.swift */,
 				3DE96E602E4B3E5E001B1573 /* ContentView.swift */,
 			);
@@ -289,6 +292,7 @@
 				3D7291B92E60737000CE9955 /* Train.swift in Sources */,
 				3DE96E632E4B3E5E001B1573 /* Item.swift in Sources */,
 				3D7291B82E60736C00CE9955 /* Line.swift in Sources */,
+				3DA227952EB3798500128B0D /* TimeTableView.swift in Sources */,
 				3DE96E6F2E4C83F8001B1573 /* SearchSheetView.swift in Sources */,
 				3DE96E5F2E4B3E5E001B1573 /* bsrApp.swift in Sources */,
 				3D7291BD2E6073CE00CE9955 /* LineData.swift in Sources */,

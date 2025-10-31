@@ -10,7 +10,7 @@ import SwiftData
 
 class TrainData {
     static func importTrains(context: ModelContext) {
-        guard let trainIndexUrl = Bundle.main.url(forResource: "train_index", withExtension: "json"),
+        guard let trainIndexUrl = Bundle.main.url(forResource: "trains_index", withExtension: "json"),
         let trainIndexData = try? Data(contentsOf: trainIndexUrl)
         else {
             return
@@ -37,6 +37,5 @@ class TrainData {
         } catch {
             print("Error importing trains \(error)")
         }
-        
     }
 }

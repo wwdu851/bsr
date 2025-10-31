@@ -67,7 +67,7 @@ class Stop : Codable {
     var arrivalTime: String?
     var departureTime: String?
     
-    var train: Train?
+    @Relationship(inverse: \Train.schedule) var train: Train?
     
     enum CodingKeys: String, CodingKey {
         case stationId = "station_id"
@@ -84,14 +84,14 @@ class Stop : Codable {
     required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.stationId = try container.decode(String.self, forKey: .stationId)
-        self.departureTime = try container.decode(String.self, forKey: .departureTime)
-        self.arrivalTime = try container.decode(String.self, forKey: .arrivalTime)
+        self.departureTime = try container.decodeIfPresent(String.self, forKey: .departureTime)
+        self.arrivalTime = try container.decodeIfPresent(String.self, forKey: .arrivalTime)
     }
     
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.stationId, forKey: .stationId)
-        try container.encode(self.arrivalTime, forKey: .arrivalTime)
-        try container.encode(self.departureTime, forKey: .departureTime)
+        try container.encodeIfPresent(self.arrivalTime, forKey: .arrivalTime)
+        try container.encodeIfPresent(self.departureTime, forKey: .departureTime)
     }
 }

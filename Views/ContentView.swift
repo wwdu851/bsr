@@ -8,8 +8,6 @@
 import SwiftUI
 import SwiftData
 
-import SwiftUI
-
 enum FieldKind: String, Identifiable {
     case origin, destination
     var id: String { rawValue }

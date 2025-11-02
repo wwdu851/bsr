@@ -24,9 +24,11 @@ struct ContentView: View {
 
     @State private var editingField: FieldKind? = nil
     @State private var selectedView: CurrentView = .timetable
+    
+    @State private var navigationPath: [AnyHashable] = []
 
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             VStack {
                 Picker("CurrentView", selection: $selectedView) {
                     Text("Timetable").tag(CurrentView.timetable)

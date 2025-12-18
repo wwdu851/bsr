@@ -80,5 +80,7 @@ public struct TimeTableView : View {
 }
 
 #Preview {
-    TimeTableView(origin: nil, destination: nil, editingField: .origin)
+    @Previewable @State var origin = ""
+    @Previewable @State var destination = ""
+    TimeTableView(origin: $origin, destination: $destination)
 }

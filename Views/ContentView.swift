@@ -18,6 +18,12 @@ enum CurrentView: String, CaseIterable, Identifiable {
     var id: String { rawValue }
 }
 
+enum NavigationDestination: Hashable {
+    case timetable
+    case trainDetail(trainId: String)
+    case stationInfo(stationId: String)
+}
+
 struct ContentView: View {
     @State private var origin: String = ""
     @State private var destination: String = ""
@@ -25,7 +31,7 @@ struct ContentView: View {
     @State private var editingField: FieldKind? = nil
     @State private var selectedView: CurrentView = .timetable
     
-    @State private var navigationPath: [AnyHashable] = []
+    @State private var navigationPath = NavigationPath()
 
     var body: some View {
         NavigationStack{
@@ -93,6 +99,9 @@ struct ContentView: View {
             }
             .navigationTitle("Plan")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: NavigationDestination.self) { _ in
+                TimeTableView.init(origin: $origin, destination: $destination)
+            }
             .sheet(item: $editingField) { field in
                 SearchSheetView(
                     origin: $origin,

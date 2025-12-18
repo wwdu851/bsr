@@ -16,7 +16,6 @@ class Train : Codable {
     var origin: String
     var destination: String
     
-    @Relationship(deleteRule: .cascade, inverse: \Stop.train) var stop: Stop?
     var schedule: [Stop]
     var daysOfOperation: [Int]
     

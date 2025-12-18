@@ -31,9 +31,9 @@ class TrainData {
                     context.insert(train)
                     importedCount += 1
                 }
-                try context.save()
                 print("Imported \(importedCount) trains")
             }
+            try context.save()
         } catch {
             print("Error importing trains \(error)")
         }

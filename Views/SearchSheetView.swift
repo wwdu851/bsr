@@ -9,15 +9,15 @@ import SwiftUI
 import SwiftData
 
 struct SearchSheetView: View {
-    @Binding var origin: String
-    @Binding var destination: String
+    @Environment(TripModel.self) private var trip
     
     let editingField: FieldKind
 
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focusedField: FieldKind?
-
     
+    let onStationSelected: () -> Void
+
     @Query var allStations: [Station]
 
     private var filteredStations: [Station] {
@@ -28,7 +28,7 @@ struct SearchSheetView: View {
     }
 
     private var currentText: String {
-        editingField == .origin ? origin : destination
+        editingField == .origin ? trip.origin : trip.destination
     }
 
     var body: some View {
@@ -49,7 +49,7 @@ struct SearchSheetView: View {
                     Circle()
                         .fill(Color.gray)
                         .frame(width: 8, height: 8)
-                    TextField("Origin", text: $origin)
+                    TextField("Origin", text: trip.origin)
                         .focused($focusedField, equals: .origin)
                 }
                 .padding(12)
@@ -67,7 +67,7 @@ struct SearchSheetView: View {
                     RoundedRectangle(cornerRadius: 2)
                         .fill(Color.gray)
                         .frame(width: 8, height: 8)
-                    TextField("Destination", text: $destination)
+                    TextField("Destination", text: trip.destination)
                         .focused($focusedField, equals: .destination)
                 }
                 .padding(12)
@@ -80,10 +80,11 @@ struct SearchSheetView: View {
                 ForEach(filteredStations, id: \.self) { station in
                     Button {
                         if editingField == .origin {
-                            origin = station.name
+                            trip.origin = station.name
                         } else {
-                            destination = station.name
+                            trip.destination = station.name
                         }
+                        onStationSelected()
                         dismiss()
                     } label: {
                         Text(station.name)

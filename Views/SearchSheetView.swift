@@ -16,8 +16,9 @@ struct SearchSheetView: View {
 
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focusedField: FieldKind?
-
     
+    let onStationSelected: () -> Void
+
     @Query var allStations: [Station]
 
     private var filteredStations: [Station] {
@@ -84,6 +85,7 @@ struct SearchSheetView: View {
                         } else {
                             destination = station.name
                         }
+                        onStationSelected()
                         dismiss()
                     } label: {
                         Text(station.name)

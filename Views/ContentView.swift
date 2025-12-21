@@ -25,8 +25,7 @@ enum NavigationDestination: Hashable {
 }
 
 struct ContentView: View {
-    @State private var origin: String = ""
-    @State private var destination: String = ""
+    @Environment(TripModel.self) private var trip
 
     @State private var editingField: FieldKind? = nil
     @State private var selectedView: CurrentView = .timetable
@@ -34,7 +33,7 @@ struct ContentView: View {
     @State private var navigationPath = NavigationPath()
 
     var body: some View {
-        NavigationStack{
+        NavigationStack(path: $navigationPath){
             VStack {
                 Picker("CurrentView", selection: $selectedView) {
                     Text("Timetable").tag(CurrentView.timetable)
@@ -51,8 +50,10 @@ struct ContentView: View {
                                 Circle()
                                     .fill(Color.gray)
                                     .frame(width: 8, height: 8)
-                                Text(origin.isEmpty ? "Origin" : origin)
-                                    .foregroundColor(origin.isEmpty ? .gray : .primary)
+                                Text(trip.origin.isEmpty ? "Origin" : trip.origin)
+                                    .foregroundColor(
+                                        trip.origin.isEmpty ? .gray : .primary
+                                    )
                                 Spacer()
                             }
                             .padding(12)
@@ -73,8 +74,8 @@ struct ContentView: View {
                                 RoundedRectangle(cornerRadius: 2)
                                     .fill(Color.gray)
                                     .frame(width: 8, height: 8)
-                                Text(destination.isEmpty ? "Destination" : destination)
-                                    .foregroundColor(destination.isEmpty ? .gray : .primary)
+                                Text(trip.destination.isEmpty ? "Destination" : trip.destination)
+                                    .foregroundColor(trip.destination.isEmpty ? .gray : .primary)
                                 Spacer()
                             }
                             .padding(12)
@@ -85,7 +86,7 @@ struct ContentView: View {
                     .padding(.horizontal)
 
                     Button {
-                        swap(&origin, &destination)
+                        trip.swap()
                     } label: {
                         Image(systemName: "arrow.up.arrow.down.circle.fill")
                             .font(.title2)
@@ -99,14 +100,29 @@ struct ContentView: View {
             }
             .navigationTitle("Plan")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: NavigationDestination.self) { _ in
-                TimeTableView.init(origin: $origin, destination: $destination)
+            .navigationDestination(for: NavigationDestination.self) { value in
+                switch value {
+                case .timetable:
+                    TimeTableView()
+                case .trainDetail:
+                    Text("Train details comming soon...")
+                case .stationInfo:
+                    Text("Station info comming soon...")
+                }
             }
             .sheet(item: $editingField) { field in
+                @Bindable var trip = trip
                 SearchSheetView(
-                    origin: $origin,
-                    destination: $destination,
-                    editingField: field
+                    origin: $trip.origin,
+                    destination: $trip.destination,
+                    editingField: field,
+                    onStationSelected: {
+                        if !trip.origin.isEmpty && !trip.destination.isEmpty {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                                navigationPath.append(NavigationDestination.timetable)
+                            }
+                        }
+                    }
                 )
                 .presentationBackgroundInteraction(.disabled)
                 .presentationDetents([.large])

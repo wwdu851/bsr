@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct bsrApp: App {
+    @State private var tripModel = TripModel()
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Station.self,
@@ -37,6 +38,7 @@ struct bsrApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(tripModel)
         }
         .modelContainer(sharedModelContainer)
     }

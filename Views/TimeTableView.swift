@@ -10,9 +10,8 @@ import SwiftData
 
 
 public struct TimeTableView : View {
-    @Binding var origin: String
-    @Binding var destination: String
-    
+    @Environment(TripModel.self) private var trip
+    @Environment(\.dismiss) private var dismiss
     @State private var editingField: FieldKind? = nil
     
     public var body: some View {
@@ -26,8 +25,8 @@ public struct TimeTableView : View {
                             Circle()
                                 .fill(Color.gray)
                                 .frame(width: 8, height: 8)
-                            Text(origin.isEmpty ? "Origin" : origin)
-                                .foregroundColor(origin.isEmpty ? .gray : .primary)
+                            Text(trip.origin.isEmpty ? "Origin" : trip.origin)
+                                .foregroundColor(trip.origin.isEmpty ? .gray : .primary)
                             Spacer()
                         }
                         .padding(12)
@@ -48,8 +47,8 @@ public struct TimeTableView : View {
                             RoundedRectangle(cornerRadius: 2)
                                 .fill(Color.gray)
                                 .frame(width: 8, height: 8)
-                            Text(destination.isEmpty ? "Destination" : destination)
-                                .foregroundColor(destination.isEmpty ? .gray : .primary)
+                            Text(trip.destination.isEmpty ? "Destination" : trip.destination)
+                                .foregroundColor(trip.destination.isEmpty ? .gray : .primary)
                             Spacer()
                         }
                         .padding(12)
@@ -60,7 +59,7 @@ public struct TimeTableView : View {
                 .padding(.horizontal)
                 
                 Button {
-                    swap(&origin, &destination)
+                    trip.swap()
                 } label: {
                     Image(systemName: "arrow.up.arrow.down.circle.fill")
                         .font(.title2)
@@ -76,11 +75,23 @@ public struct TimeTableView : View {
                 Text("S102")
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .tint(.accent)
+                }
+            }
+        }
+        .navigationTitle("Connections")
+        .navigationBarTitleDisplayMode(.inline)
     }
+    
 }
 
 #Preview {
-    @Previewable @State var origin = ""
-    @Previewable @State var destination = ""
-    TimeTableView(origin: $origin, destination: $destination)
+    TimeTableView()
 }

@@ -15,6 +15,7 @@
 		3D7291BC2E6073CA00CE9955 /* StationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA22E547D0B001B1573 /* StationData.swift */; };
 		3D7291BD2E6073CE00CE9955 /* LineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA32E547D21001B1573 /* LineData.swift */; };
 		3DA227952EB3798500128B0D /* TimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA227942EB3797E00128B0D /* TimeTableView.swift */; };
+		3DDC02272EF7D8CA000A9F36 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC02262EF7D8C5000A9F36 /* TripModel.swift */; };
 		3DE96E5F2E4B3E5E001B1573 /* bsrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E5E2E4B3E5E001B1573 /* bsrApp.swift */; };
 		3DE96E612E4B3E5E001B1573 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E602E4B3E5E001B1573 /* ContentView.swift */; };
 		3DE96E632E4B3E5E001B1573 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E622E4B3E5E001B1573 /* Item.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		3DA227942EB3797E00128B0D /* TimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableView.swift; sourceTree = "<group>"; };
+		3DDC02262EF7D8C5000A9F36 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		3DE96E5B2E4B3E5E001B1573 /* bsr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bsr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE96E5E2E4B3E5E001B1573 /* bsrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bsrApp.swift; sourceTree = "<group>"; };
 		3DE96E602E4B3E5E001B1573 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		3DE96E9C2E531C36001B1573 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3DDC02262EF7D8C5000A9F36 /* TripModel.swift */,
 				3DE96EA72E547D6F001B1573 /* Train.swift */,
 				3DE96EA62E547D67001B1573 /* Line.swift */,
 				3DE96EA52E547D5D001B1573 /* Station.swift */,
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DDC02272EF7D8CA000A9F36 /* TripModel.swift in Sources */,
 				3DE96E612E4B3E5E001B1573 /* ContentView.swift in Sources */,
 				3D7291BA2E6073C100CE9955 /* DataImporter.swift in Sources */,
 				3D7291BB2E6073C500CE9955 /* TrainData.swift in Sources */,

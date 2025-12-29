@@ -9,10 +9,13 @@ import SwiftUI
 
 @Observable
 final class TripModel {
-    var origin: String = ""
-    var destination: String = ""
+    var originName: String = ""
+    var destinationName: String = ""
+    var originId: String = ""
+    var destinationId: String = ""
     
     func swap() {
-        (origin, destination) = (destination, origin)
+        (originName, destinationName) = (destinationName, originName)
+        (originId, destinationId) = (destinationId, originId)
     }
 }

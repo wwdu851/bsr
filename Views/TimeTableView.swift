@@ -34,8 +34,8 @@ public struct TimeTableView : View {
                             Circle()
                                 .fill(Color.gray)
                                 .frame(width: 8, height: 8)
-                            Text(trip.origin.isEmpty ? "Origin" : trip.origin)
-                                .foregroundColor(trip.origin.isEmpty ? .gray : .primary)
+                            Text(trip.originId.isEmpty ? "Origin" : trip.originId)
+                                .foregroundColor(trip.originId.isEmpty ? .gray : .primary)
                             Spacer()
                         }
                         .padding(12)
@@ -56,8 +56,8 @@ public struct TimeTableView : View {
                             RoundedRectangle(cornerRadius: 2)
                                 .fill(Color.gray)
                                 .frame(width: 8, height: 8)
-                            Text(trip.destination.isEmpty ? "Destination" : trip.destination)
-                                .foregroundColor(trip.destination.isEmpty ? .gray : .primary)
+                            Text(trip.destinationId.isEmpty ? "Destination" : trip.destinationId)
+                                .foregroundColor(trip.destinationId.isEmpty ? .gray : .primary)
                             Spacer()
                         }
                         .padding(12)
@@ -101,7 +101,7 @@ public struct TimeTableView : View {
         .navigationTitle("Connections")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            viewModel = TimeTableViewModel(origin: trip.origin, destination: trip.destination, context: modelContext)
+            viewModel = TimeTableViewModel(origin: trip.originId, destination: trip.destinationId, context: modelContext)
             viewModel?.loadConnections()
         }
     }

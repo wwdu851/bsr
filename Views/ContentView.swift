@@ -50,9 +50,9 @@ struct ContentView: View {
                                 Circle()
                                     .fill(Color.gray)
                                     .frame(width: 8, height: 8)
-                                Text(trip.origin.isEmpty ? "Origin" : trip.origin)
+                                Text(trip.originId.isEmpty ? "Origin" : trip.originId)
                                     .foregroundColor(
-                                        trip.origin.isEmpty ? .gray : .primary
+                                        trip.originId.isEmpty ? .gray : .primary
                                     )
                                 Spacer()
                             }
@@ -74,8 +74,8 @@ struct ContentView: View {
                                 RoundedRectangle(cornerRadius: 2)
                                     .fill(Color.gray)
                                     .frame(width: 8, height: 8)
-                                Text(trip.destination.isEmpty ? "Destination" : trip.destination)
-                                    .foregroundColor(trip.destination.isEmpty ? .gray : .primary)
+                                Text(trip.destinationId.isEmpty ? "Destination" : trip.destinationId)
+                                    .foregroundColor(trip.destinationId.isEmpty ? .gray : .primary)
                                 Spacer()
                             }
                             .padding(12)
@@ -113,11 +113,11 @@ struct ContentView: View {
             .sheet(item: $editingField) { field in
                 @Bindable var trip = trip
                 SearchSheetView(
-                    origin: $trip.origin,
-                    destination: $trip.destination,
+                    origin: $trip.originId,
+                    destination: $trip.destinationId,
                     editingField: field,
                     onStationSelected: {
-                        if !trip.origin.isEmpty && !trip.destination.isEmpty {
+                        if !trip.originId.isEmpty && !trip.destinationId.isEmpty {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                                 navigationPath.append(NavigationDestination.timetable)
                             }

@@ -8,10 +8,19 @@
 import SwiftUI
 import SwiftData
 
+enum TrainLine: String {
+    case s2
+    case huaimi
+    case tongmi
+    case subcenter
+}
 
 public struct TimeTableView : View {
     @Environment(TripModel.self) private var trip
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    
+    @State private var viewModel: TimeTableViewModel?
     @State private var editingField: FieldKind? = nil
     
     public var body: some View {
@@ -71,8 +80,11 @@ public struct TimeTableView : View {
             }
             Spacer()
             List {
-                Text("S101")
-                Text("S102")
+                if let connections = viewModel?.connections {
+                    ForEach(connections) { connection in
+                        TimeTableCellView(connection: connection)
+                    }
+                }
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -88,10 +100,67 @@ public struct TimeTableView : View {
         }
         .navigationTitle("Connections")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            viewModel = TimeTableViewModel(origin: trip.origin, destination: trip.destination, context: modelContext)
+            viewModel?.loadConnections()
+        }
     }
-    
 }
 
-#Preview {
-    TimeTableView()
+struct TimeTableCellView: View {
+    let connection: TimetableConnection
+
+    var body: some View {
+        let trainLine = TrainLine(rawValue: connection.line)
+        VStack(alignment: .leading) {
+            HStack() {
+                HStack(spacing: 8) {
+                    Image(systemName: "lightrail.fill")
+                    Text(trainLine?.rawValue.capitalized ?? "S2")
+                }
+                .frame(minWidth: 68, alignment: .leading)
+                .font(.caption)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
+                .background {
+                    switch trainLine {
+                    case .s2: Color.s2Background
+                    case .huaimi:
+                        Color.huaimiBackground
+                    case .tongmi:
+                        Color.tongmiBackground
+                    case .subcenter:
+                        Color.subcenterBackground
+                    default:
+                        Color.s2Background
+                    }
+                }
+                .foregroundStyle(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+                Text("Direction \(connection.id)")
+                Spacer()
+            }
+            HStack {
+                Text(connection.departureTime)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                Circle()
+                    .frame(width: 8, height: 8)
+                Rectangle()
+                    .frame(height: 2)
+                    .padding(.horizontal, -8)
+                Circle()
+                    .frame(width: 8, height: 8)
+                Text(connection.arrivalTime)
+                    .font(.title3)
+                    .fontWeight(.bold)
+            }
+            HStack {
+                Text("\(connection.interval) mins")
+                Spacer()
+                Text("¥\(connection.fare)")
+            }
+            
+        }
+    }
 }

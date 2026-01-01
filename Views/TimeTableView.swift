@@ -34,8 +34,8 @@ public struct TimeTableView : View {
                             Circle()
                                 .fill(Color.gray)
                                 .frame(width: 8, height: 8)
-                            Text(trip.originId.isEmpty ? "Origin" : trip.originId)
-                                .foregroundColor(trip.originId.isEmpty ? .gray : .primary)
+                            Text(trip.originName.isEmpty ? "Origin" : trip.originName)
+                                .foregroundColor(trip.originName.isEmpty ? .gray : .primary)
                             Spacer()
                         }
                         .padding(12)
@@ -56,8 +56,8 @@ public struct TimeTableView : View {
                             RoundedRectangle(cornerRadius: 2)
                                 .fill(Color.gray)
                                 .frame(width: 8, height: 8)
-                            Text(trip.destinationId.isEmpty ? "Destination" : trip.destinationId)
-                                .foregroundColor(trip.destinationId.isEmpty ? .gray : .primary)
+                            Text(trip.destinationName.isEmpty ? "Destination" : trip.destinationName)
+                                .foregroundColor(trip.destinationName.isEmpty ? .gray : .primary)
                             Spacer()
                         }
                         .padding(12)
@@ -101,8 +101,18 @@ public struct TimeTableView : View {
         .navigationTitle("Connections")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            viewModel = TimeTableViewModel(origin: trip.originId, destination: trip.destinationId, context: modelContext)
+            viewModel = TimeTableViewModel(
+                origin: trip.originId,
+                destination: trip.destinationId,
+                context: modelContext
+            )
             viewModel?.loadConnections()
+        }
+        .onDisappear {
+            trip.originId = ""
+            trip.originName = ""
+            trip.destinationId = ""
+            trip.destinationName = ""
         }
     }
 }
@@ -137,7 +147,7 @@ struct TimeTableCellView: View {
                 }
                 .foregroundStyle(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 4))
-                Text("Direction \(connection.id)")
+                Text("Direction \(connection.terminus.capitalized)")
                 Spacer()
             }
             HStack {

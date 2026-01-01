@@ -9,8 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct SearchSheetView: View {
-    @Binding var origin: String
-    @Binding var destination: String
+    @Binding var originId: String
+    @Binding var originName: String
+    @Binding var destinationId: String
+    @Binding var destinationName: String
     
     let editingField: FieldKind
 
@@ -29,7 +31,7 @@ struct SearchSheetView: View {
     }
 
     private var currentText: String {
-        editingField == .origin ? origin : destination
+        editingField == .origin ? originName : destinationName
     }
 
     var body: some View {
@@ -50,7 +52,7 @@ struct SearchSheetView: View {
                     Circle()
                         .fill(Color.gray)
                         .frame(width: 8, height: 8)
-                    TextField("Origin", text: $origin)
+                    TextField("Origin", text: $originName)
                         .focused($focusedField, equals: .origin)
                 }
                 .padding(12)
@@ -68,7 +70,7 @@ struct SearchSheetView: View {
                     RoundedRectangle(cornerRadius: 2)
                         .fill(Color.gray)
                         .frame(width: 8, height: 8)
-                    TextField("Destination", text: $destination)
+                    TextField("Destination", text: $destinationName)
                         .focused($focusedField, equals: .destination)
                 }
                 .padding(12)
@@ -81,9 +83,11 @@ struct SearchSheetView: View {
                 ForEach(filteredStations, id: \.self) { station in
                     Button {
                         if editingField == .origin {
-                            origin = station.name
+                            originName = station.name
+                            originId = station.id
                         } else {
-                            destination = station.name
+                            destinationName = station.name
+                            destinationId = station.id
                         }
                         onStationSelected()
                         dismiss()

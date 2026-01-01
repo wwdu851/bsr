@@ -50,9 +50,9 @@ struct ContentView: View {
                                 Circle()
                                     .fill(Color.gray)
                                     .frame(width: 8, height: 8)
-                                Text(trip.originId.isEmpty ? "Origin" : trip.originId)
+                                Text(trip.originName.isEmpty ? "Origin" : trip.originName)
                                     .foregroundColor(
-                                        trip.originId.isEmpty ? .gray : .primary
+                                        trip.originName.isEmpty ? .gray : .primary
                                     )
                                 Spacer()
                             }
@@ -74,8 +74,8 @@ struct ContentView: View {
                                 RoundedRectangle(cornerRadius: 2)
                                     .fill(Color.gray)
                                     .frame(width: 8, height: 8)
-                                Text(trip.destinationId.isEmpty ? "Destination" : trip.destinationId)
-                                    .foregroundColor(trip.destinationId.isEmpty ? .gray : .primary)
+                                Text(trip.destinationName.isEmpty ? "Destination" : trip.destinationName)
+                                    .foregroundColor(trip.destinationName.isEmpty ? .gray : .primary)
                                 Spacer()
                             }
                             .padding(12)
@@ -113,8 +113,10 @@ struct ContentView: View {
             .sheet(item: $editingField) { field in
                 @Bindable var trip = trip
                 SearchSheetView(
-                    origin: $trip.originId,
-                    destination: $trip.destinationId,
+                    originId: $trip.originId,
+                    originName: $trip.originName,
+                    destinationId: $trip.destinationId,
+                    destinationName: $trip.destinationName,
                     editingField: field,
                     onStationSelected: {
                         if !trip.originId.isEmpty && !trip.destinationId.isEmpty {

@@ -46,11 +46,19 @@ final class TimeTableViewModel {
                     line: train.line,
                     departureTime: departureTime,
                     arrivalTime: arrivalTime,
+                    terminus: train.destination,
                     interval: interval,
                     fare: 8
                 )
 
                 results.append(connection)
+            }
+            
+            results = results.sorted {
+                guard let lhs = minutesSinceMidnight($0.departureTime), let rhs = minutesSinceMidnight($1.departureTime) else {
+                    return false
+                }
+                return lhs < rhs
             }
             self.connections = results
         } catch {
@@ -93,6 +101,7 @@ struct TimetableConnection: Identifiable {
     let line: String
     let departureTime: String
     let arrivalTime: String
+    let terminus: String
     let interval: Int
     let fare: Int
 }

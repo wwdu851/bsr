@@ -24,36 +24,49 @@ enum RailGeometryData {
         do {
             let data = try Data(contentsOf: url)
             let featureCollection = try JSONDecoder().decode(GeoJSONFeatureCollection.self, from: data)
-            return featureCollection.features.compactMap(featureToSegment)
+            return featureCollection.features.flatMap(featureToSegments)
         } catch {
             print("⚠️ Failed to load rail geometry GeoJSON: \(error.localizedDescription)")
             return []
         }
     }
 
-    private static func featureToSegment(_ feature: GeoJSONFeature) -> RailGeometrySegment? {
+    private static func featureToSegments(_ feature: GeoJSONFeature) -> [RailGeometrySegment] {
         guard let lineID = feature.properties.lineID else {
-            return nil
+            return []
         }
 
-        let coordinates: [CLLocationCoordinate2D]
+        let baseID = feature.id ?? "\(lineID)-\(feature.properties.branchID ?? "main")"
         switch feature.geometry {
         case .lineString(let points):
-            coordinates = points.map(\.coordinate)
+            let coordinates = points.map(\.coordinate)
+            guard coordinates.count >= 2 else {
+                return []
+            }
+            return [
+                RailGeometrySegment(
+                    id: baseID,
+                    lineID: lineID,
+                    branchID: feature.properties.branchID,
+                    coordinates: coordinates
+                )
+            ]
         case .multiLineString(let lines):
-            coordinates = lines.flatMap { $0.map(\.coordinate) }
+            // Keep each part isolated so MapPolyline does not draw artificial
+            // straight connectors between disjoint geometry pieces.
+            return lines.enumerated().compactMap { partIndex, rawPoints in
+                let coordinates = rawPoints.map(\.coordinate)
+                guard coordinates.count >= 2 else {
+                    return nil
+                }
+                return RailGeometrySegment(
+                    id: "\(baseID)-part-\(partIndex)",
+                    lineID: lineID,
+                    branchID: feature.properties.branchID,
+                    coordinates: coordinates
+                )
+            }
         }
-
-        guard coordinates.count >= 2 else {
-            return nil
-        }
-
-        return RailGeometrySegment(
-            id: feature.id ?? "\(lineID)-\(feature.properties.branchID ?? "main")",
-            lineID: lineID,
-            branchID: feature.properties.branchID,
-            coordinates: coordinates
-        )
     }
 }
 

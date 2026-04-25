@@ -10,25 +10,25 @@ import SwiftData
 
 class DataImporter {
     static func importInitialData(context: ModelContext) {
-        // Initial import for core static data
-        if !hasCoreDataBeenImported(context: context) {
-            print("Core data import is initiated")
-            StationData.importStations(context: context)
+        // Initial import for core static data (Lines)
+        if !hasLinesBeenImported(context: context) {
+            print("Line data import is initiated")
             LineData.importLines(context: context)
-            print("Core data import is finished")
-        } else {
-            print("Core data (stations/lines) already imported.")
+            print("Line data import is finished")
         }
         
-        // Always check for new or updated train schedules
-        print("Checking for new train schedules...")
+        // Always synchronize stations
+        print("Checking for station updates...")
+        StationData.importStations(context: context)
+        
+        // Always synchronize train schedules
+        print("Checking for train schedule updates...")
         TrainData.importTrains(context: context)
     }
     
-    private static func hasCoreDataBeenImported(context: ModelContext) -> Bool {
-        let stationCount = try? context.fetchCount(FetchDescriptor<Station>())
+    private static func hasLinesBeenImported(context: ModelContext) -> Bool {
         let lineCount = try? context.fetchCount(FetchDescriptor<Line>())
-        return (stationCount ?? 0) > 0 && (lineCount ?? 0) > 0
+        return (lineCount ?? 0) > 0
     }
 }
 

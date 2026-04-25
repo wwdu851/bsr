@@ -55,25 +55,17 @@
 		3DE96E632E4B3E5E001B1573 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E622E4B3E5E001B1573 /* Item.swift */; };
 		3DE96E652E4B3E5F001B1573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E642E4B3E5F001B1573 /* Assets.xcassets */; };
 		3DE96E6F2E4C83F8001B1573 /* SearchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E6E2E4C83F8001B1573 /* SearchSheetView.swift */; };
-		3DE96E872E5319E2001B1573 /* s252.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E802E5319E2001B1573 /* s252.json */; };
 		3DE96E882E5319E2001B1573 /* lines.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E712E5319E2001B1573 /* lines.json */; };
-		3DE96E892E5319E2001B1573 /* s204.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E7A2E5319E2001B1573 /* s204.json */; };
 		3DE96E8A2E5319E2001B1573 /* s105.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E762E5319E2001B1573 /* s105.json */; };
 		3DE96E8B2E5319E2001B1573 /* s206.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E7C2E5319E2001B1573 /* s206.json */; };
-		3DE96E8C2E5319E2001B1573 /* s208.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E7E2E5319E2001B1573 /* s208.json */; };
 		3DE96E8D2E5319E2001B1573 /* trains_index.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E862E5319E2001B1573 /* trains_index.json */; };
 		3DE96E8E2E5319E2001B1573 /* s201.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E772E5319E2001B1573 /* s201.json */; };
 		3DE96E8F2E5319E2001B1573 /* s205.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E7B2E5319E2001B1573 /* s205.json */; };
 		3DE96E902E5319E2001B1573 /* s103.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E752E5319E2001B1573 /* s103.json */; };
-		3DE96E922E5319E2001B1573 /* s203.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E792E5319E2001B1573 /* s203.json */; };
 		3DE96E932E5319E2001B1573 /* s288.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E842E5319E2001B1573 /* s288.json */; };
 		3DE96E942E5319E2001B1573 /* s287.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E832E5319E2001B1573 /* s287.json */; };
 		3DE96E952E5319E2001B1573 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E732E5319E2001B1573 /* stations.json */; };
-		3DE96E962E5319E2001B1573 /* s254.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E822E5319E2001B1573 /* s254.json */; };
 		3DE96E972E5319E2001B1573 /* s101.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E742E5319E2001B1573 /* s101.json */; };
-		3DE96E982E5319E2001B1573 /* s253.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E812E5319E2001B1573 /* s253.json */; };
-		3DE96E992E5319E2001B1573 /* s251.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E7F2E5319E2001B1573 /* s251.json */; };
-		3DE96E9A2E5319E2001B1573 /* s207.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E7D2E5319E2001B1573 /* s207.json */; };
 		3DE96E9B2E5319E2001B1573 /* s202.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E782E5319E2001B1573 /* s202.json */; };
 		3DF952512F013FB10086DD10 /* TimeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF952502F011FCC0086DD10 /* TimeTableViewModel.swift */; };
 		3DF952532F9C90010086DD10 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF952522F9C90010086DD10 /* MapViewModel.swift */; };
@@ -130,16 +122,8 @@
 		3DE96E762E5319E2001B1573 /* s105.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s105.json; sourceTree = "<group>"; };
 		3DE96E772E5319E2001B1573 /* s201.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s201.json; sourceTree = "<group>"; };
 		3DE96E782E5319E2001B1573 /* s202.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s202.json; sourceTree = "<group>"; };
-		3DE96E792E5319E2001B1573 /* s203.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s203.json; sourceTree = "<group>"; };
-		3DE96E7A2E5319E2001B1573 /* s204.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s204.json; sourceTree = "<group>"; };
 		3DE96E7B2E5319E2001B1573 /* s205.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s205.json; sourceTree = "<group>"; };
 		3DE96E7C2E5319E2001B1573 /* s206.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s206.json; sourceTree = "<group>"; };
-		3DE96E7D2E5319E2001B1573 /* s207.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s207.json; sourceTree = "<group>"; };
-		3DE96E7E2E5319E2001B1573 /* s208.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s208.json; sourceTree = "<group>"; };
-		3DE96E7F2E5319E2001B1573 /* s251.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s251.json; sourceTree = "<group>"; };
-		3DE96E802E5319E2001B1573 /* s252.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s252.json; sourceTree = "<group>"; };
-		3DE96E812E5319E2001B1573 /* s253.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s253.json; sourceTree = "<group>"; };
-		3DE96E822E5319E2001B1573 /* s254.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s254.json; sourceTree = "<group>"; };
 		3DE96E832E5319E2001B1573 /* s287.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s287.json; sourceTree = "<group>"; };
 		3DE96E842E5319E2001B1573 /* s288.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = s288.json; sourceTree = "<group>"; };
 		3DE96E862E5319E2001B1573 /* trains_index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trains_index.json; sourceTree = "<group>"; };
@@ -249,16 +233,8 @@
 				3DE96E762E5319E2001B1573 /* s105.json */,
 				3DE96E772E5319E2001B1573 /* s201.json */,
 				3DE96E782E5319E2001B1573 /* s202.json */,
-				3DE96E792E5319E2001B1573 /* s203.json */,
-				3DE96E7A2E5319E2001B1573 /* s204.json */,
 				3DE96E7B2E5319E2001B1573 /* s205.json */,
 				3DE96E7C2E5319E2001B1573 /* s206.json */,
-				3DE96E7D2E5319E2001B1573 /* s207.json */,
-				3DE96E7E2E5319E2001B1573 /* s208.json */,
-				3DE96E7F2E5319E2001B1573 /* s251.json */,
-				3DE96E802E5319E2001B1573 /* s252.json */,
-				3DE96E812E5319E2001B1573 /* s253.json */,
-				3DE96E822E5319E2001B1573 /* s254.json */,
 				3DE96E832E5319E2001B1573 /* s287.json */,
 				3DE96E842E5319E2001B1573 /* s288.json */,
 			);
@@ -373,7 +349,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE96E652E4B3E5F001B1573 /* Assets.xcassets in Resources */,
-				3DE96E872E5319E2001B1573 /* s252.json in Resources */,
 				3D3F546D2F9D017000377828 /* s522.json in Resources */,
 				3D3F546E2F9D017000377828 /* s611.json in Resources */,
 				3D3F546F2F9D017000377828 /* s603.json in Resources */,
@@ -406,24 +381,17 @@
 				3D3F548A2F9D017000377828 /* s601.json in Resources */,
 				3D3F548B2F9D017000377828 /* s102.json in Resources */,
 				3DE96E882E5319E2001B1573 /* lines.json in Resources */,
-				3DE96E892E5319E2001B1573 /* s204.json in Resources */,
 				3DE96E8A2E5319E2001B1573 /* s105.json in Resources */,
 				3DE96E8B2E5319E2001B1573 /* s206.json in Resources */,
 				3D3F544D2F9C6EBF00377828 /* rail_geometry.geojson in Resources */,
-				3DE96E8C2E5319E2001B1573 /* s208.json in Resources */,
 				3DE96E8D2E5319E2001B1573 /* trains_index.json in Resources */,
 				3DE96E8E2E5319E2001B1573 /* s201.json in Resources */,
 				3DE96E8F2E5319E2001B1573 /* s205.json in Resources */,
 				3DE96E902E5319E2001B1573 /* s103.json in Resources */,
-				3DE96E922E5319E2001B1573 /* s203.json in Resources */,
 				3DE96E932E5319E2001B1573 /* s288.json in Resources */,
 				3DE96E942E5319E2001B1573 /* s287.json in Resources */,
 				3DE96E952E5319E2001B1573 /* stations.json in Resources */,
-				3DE96E962E5319E2001B1573 /* s254.json in Resources */,
 				3DE96E972E5319E2001B1573 /* s101.json in Resources */,
-				3DE96E982E5319E2001B1573 /* s253.json in Resources */,
-				3DE96E992E5319E2001B1573 /* s251.json in Resources */,
-				3DE96E9A2E5319E2001B1573 /* s207.json in Resources */,
 				3DE96E9B2E5319E2001B1573 /* s202.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

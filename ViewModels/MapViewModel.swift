@@ -103,8 +103,8 @@ enum MapViewModel {
         let stationPaths: [[String]]
         if line.id == "s2" {
             stationPaths = [
-                ["huangtudian", "nankou", "badaling", "kangzhuang", "shacheng"],
-                ["huangtudian", "nankou", "badaling", "yanqing"]
+                ["nankou", "badaling", "kangzhuang", "shacheng"],
+                ["nankou", "badaling", "yanqing"]
             ]
         } else {
             stationPaths = [line.stations]
@@ -147,10 +147,17 @@ enum MapViewModel {
     }
 
     private static func color(for lineID: String) -> Color {
-        let palette: [Color] = [.blue, .green, .orange, .purple, .red, .teal, .pink, .indigo, .mint]
-        let hashValue = lineID.unicodeScalars.reduce(0) { partialResult, scalar in
-            partialResult + Int(scalar.value)
+        switch lineID.lowercased() {
+        case "s2":
+            return Color("s2Background")
+        case "huaimi":
+            return Color("huaimiBackground")
+        case "tongmi":
+            return Color("tongmiBackground")
+        case "subcenter":
+            return Color("subcenterBackground")
+        default:
+            return .gray
         }
-        return palette[hashValue % palette.count]
     }
 }

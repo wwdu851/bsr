@@ -17,16 +17,44 @@ class StationData {
         }
         
         do {
-            let stations = try JSONDecoder().decode([Station].self, from: stationData)
+            let stationsInJson = try JSONDecoder().decode([Station].self, from: stationData)
+            let stationIdsInJsonSet = Set(stationsInJson.map { $0.id.lowercased() })
             
-            for station in stations {
-                context.insert(station)
+            // Fetch existing stations from SwiftData
+            let descriptor = FetchDescriptor<Station>()
+            let existingStations = try context.fetch(descriptor)
+            
+            // 1. Remove stations that are no longer in the JSON
+            var removedCount = 0
+            for station in existingStations {
+                if !stationIdsInJsonSet.contains(station.id.lowercased()) {
+                    context.delete(station)
+                    removedCount += 1
+                }
             }
             
-            try context.save()
-            print("Imported \(stations.count) stations")
+            if removedCount > 0 {
+                print("Removed \(removedCount) non-operating stations.")
+            }
+            
+            // 2. Add new stations that are in the JSON but not in SwiftData
+            let existingStationIds = Set(existingStations.map { $0.id.lowercased() })
+            var importedCount = 0
+            for station in stationsInJson {
+                if !existingStationIds.contains(station.id.lowercased()) {
+                    context.insert(station)
+                    importedCount += 1
+                }
+            }
+            
+            if importedCount > 0 || removedCount > 0 {
+                try context.save()
+                print("Station synchronization finished: Imported \(importedCount), Removed \(removedCount)")
+            } else {
+                print("Station data is up to date.")
+            }
         } catch {
-            print("Error importing stations: \(error)")
+            print("Error synchronizing stations: \(error)")
         }
     }
 }

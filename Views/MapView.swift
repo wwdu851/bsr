@@ -36,7 +36,7 @@ struct MapView: View {
                         .tint(.white)
                 }
             }
-            .mapStyle(.standard(elevation: .flat))
+            .mapStyle(.standard(elevation: .flat, emphasis: .muted))
 
             Text("Stations: \(coverage.plottedStationCount)/\(coverage.stationCount) • Lines rendered: \(coverage.renderedLineCount)/\(coverage.lineCount) • Geometry segs: \(coverage.geometrySegmentCount)")
                 .font(.caption)

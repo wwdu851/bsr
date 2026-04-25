@@ -1,0 +1,42 @@
+{
+  "id": "S603",
+  "line": "tongmi",
+  "origin": "tongzhouxi",
+  "destination": "miyunbei",
+  "schedule": [
+    {
+      "station_id": "tongzhouxi",
+      "arrival_time": null,
+      "departure_time": "08:58"
+    },
+    {
+      "station_id": "shunyi",
+      "arrival_time": "09:21",
+      "departure_time": "09:23"
+    },
+    {
+      "station_id": "niulanshan",
+      "arrival_time": "09:33",
+      "departure_time": "09:35"
+    },
+    {
+      "station_id": "huairou",
+      "arrival_time": "09:50",
+      "departure_time": "09:52"
+    },
+    {
+      "station_id": "miyunbei",
+      "arrival_time": "10:14",
+      "departure_time": null
+    }
+  ],
+  "days_of_operation": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "S521",
+  "line": "huaimi",
+  "origin": "qinghe",
+  "destination": "huairoubei",
+  "schedule": [
+    {
+      "station_id": "qinghe",
+      "arrival_time": null,
+      "departure_time": "09:24"
+    },
+    {
+      "station_id": "changpingbei",
+      "arrival_time": "09:46",
+      "departure_time": "09:48"
+    },
+    {
+      "station_id": "yanqihu",
+      "arrival_time": "10:20",
+      "departure_time": "10:22"
+    },
+    {
+      "station_id": "huairoubei",
+      "arrival_time": "10:30",
+      "departure_time": null
+    }
+  ],
+  "days_of_operation": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

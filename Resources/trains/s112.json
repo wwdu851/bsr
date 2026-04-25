@@ -1,0 +1,42 @@
+{
+  "id": "S112",
+  "line": "subcenter",
+  "origin": "qiaozhuangdong",
+  "destination": "beijingxi",
+  "schedule": [
+    {
+      "station_id": "qiaozhuangdong",
+      "arrival_time": null,
+      "departure_time": "11:59"
+    },
+    {
+      "station_id": "tongzhou",
+      "arrival_time": "12:08",
+      "departure_time": "12:09"
+    },
+    {
+      "station_id": "beijingdong",
+      "arrival_time": "12:23",
+      "departure_time": "12:24"
+    },
+    {
+      "station_id": "beijing",
+      "arrival_time": "12:35",
+      "departure_time": "12:37"
+    },
+    {
+      "station_id": "beijingxi",
+      "arrival_time": "12:52",
+      "departure_time": null
+    }
+  ],
+  "days_of_operation": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

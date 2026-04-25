@@ -1,0 +1,42 @@
+{
+  "id": "S513",
+  "line": "huaimi",
+  "origin": "beijingbei",
+  "destination": "huairoubei",
+  "schedule": [
+    {
+      "station_id": "beijingbei",
+      "arrival_time": null,
+      "departure_time": "18:14"
+    },
+    {
+      "station_id": "qinghe",
+      "arrival_time": "18:27",
+      "departure_time": "18:29"
+    },
+    {
+      "station_id": "changpingbei",
+      "arrival_time": "18:51",
+      "departure_time": "18:53"
+    },
+    {
+      "station_id": "yanqihu",
+      "arrival_time": "19:50",
+      "departure_time": "19:54"
+    },
+    {
+      "station_id": "huairoubei",
+      "arrival_time": "20:02",
+      "departure_time": null
+    }
+  ],
+  "days_of_operation": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

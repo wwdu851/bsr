@@ -1,0 +1,32 @@
+{
+  "id": "S108",
+  "line": "subcenter",
+  "origin": "tongzhou",
+  "destination": "beijingxi",
+  "schedule": [
+    {
+      "station_id": "tongzhou",
+      "arrival_time": null,
+      "departure_time": "19:12"
+    },
+    {
+      "station_id": "beijing",
+      "arrival_time": "19:31",
+      "departure_time": "19:32"
+    },
+    {
+      "station_id": "beijingxi",
+      "arrival_time": "19:46",
+      "departure_time": null
+    }
+  ],
+  "days_of_operation": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

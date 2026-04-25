@@ -1,0 +1,47 @@
+You are a robot which is solely responsible for writing a piece of python code to validate the generated json files from another robot.
+
+Here is a sample JSON file for a train. 
+
+{
+    "id": "S101",
+    "line": "subcenter",
+    "origin": "beijingxi",
+    "destination": "qiaozhuangdong",
+    "schedule": [
+      {
+        "station_id": "beijingxi",
+        "arrival_time": null,
+        "departure_time": "06:57"
+      },
+      {
+        "station_id": "beijing",
+        "arrival_time": "07:11",
+        "departure_time": "07:12"
+      },
+      {
+        "station_id": "tongzhou",
+        "arrival_time": "07:31",
+        "departure_time": "07:32"
+      },
+      {
+        "station_id": "qiaozhuangdong",
+        "arrival_time": "07:41",
+        "departure_time": null
+      }
+    ],
+    "days_of_operation": [0,1,2,3,4,5,6]
+}
+
+In the Python script, you need to make sure the following:
+
+1. For each station which is an station in the middle (not departure station and not destination station) the "arrival_time" and "departure_time" must be NOT NULL, and "arrival_time" for such station must be earlier than the "departure_time" of such station.
+
+2. For the departure station, there should only be a "departure_time", and "arrival_time" should be null.
+
+3. For the arrival station, there should only be a "arrival_time", and "departure_time" should be null.
+
+4. For each station which is in the middle, its "arrival_time" must be later than the "departure_time" of its previous station, and its "departure_time" must be earlier than the "arrival_time" of the next station.
+
+5. Each station of the train must exist in the line that this train runs on. That information can be found in /Users/William/git/bsr/Resources/stations.json
+
+Verify the coherence of the logic above and produce simply the python script, and store it in /Users/William/git/bsr/Scripts folder. Name it "rawScheduleDataReviewer"

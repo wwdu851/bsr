@@ -41,62 +41,67 @@ struct ContentView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
-                ZStack(alignment: .trailing) {
-                    VStack(spacing: 0) {
-                        Button {
-                            editingField = .origin
-                        } label: {
-                            HStack(spacing: 10) {
-                                Circle()
-                                    .fill(Color.gray)
-                                    .frame(width: 8, height: 8)
-                                Text(trip.originName.isEmpty ? "Origin" : trip.originName)
-                                    .foregroundColor(
-                                        trip.originName.isEmpty ? .gray : .primary
-                                    )
-                                Spacer()
+
+                if selectedView == .map {
+                    MapView()
+                } else {
+                    ZStack(alignment: .trailing) {
+                        VStack(spacing: 0) {
+                            Button {
+                                editingField = .origin
+                            } label: {
+                                HStack(spacing: 10) {
+                                    Circle()
+                                        .fill(Color.gray)
+                                        .frame(width: 8, height: 8)
+                                    Text(trip.originName.isEmpty ? "Origin" : trip.originName)
+                                        .foregroundColor(
+                                            trip.originName.isEmpty ? .gray : .primary
+                                        )
+                                    Spacer()
+                                }
+                                .padding(12)
+                                .background(Color(.systemGray6))
                             }
-                            .padding(12)
-                            .background(Color(.systemGray6))
+                            .overlay(
+                                Rectangle()
+                                    .frame(height: 1)
+                                    .foregroundColor(Color(.separator))
+                                    .padding(.horizontal, 30),
+                                alignment: .bottom
+                            )
+
+                            Button {
+                                editingField = .destination
+                            } label: {
+                                HStack(spacing: 10) {
+                                    RoundedRectangle(cornerRadius: 2)
+                                        .fill(Color.gray)
+                                        .frame(width: 8, height: 8)
+                                    Text(trip.destinationName.isEmpty ? "Destination" : trip.destinationName)
+                                        .foregroundColor(trip.destinationName.isEmpty ? .gray : .primary)
+                                    Spacer()
+                                }
+                                .padding(12)
+                                .background(Color(.systemGray6))
+                            }
                         }
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 1)
-                                .foregroundColor(Color(.separator))
-                                .padding(.horizontal, 30),
-                            alignment: .bottom
-                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .padding(.horizontal)
 
                         Button {
-                            editingField = .destination
+                            trip.swap()
                         } label: {
-                            HStack(spacing: 10) {
-                                RoundedRectangle(cornerRadius: 2)
-                                    .fill(Color.gray)
-                                    .frame(width: 8, height: 8)
-                                Text(trip.destinationName.isEmpty ? "Destination" : trip.destinationName)
-                                    .foregroundColor(trip.destinationName.isEmpty ? .gray : .primary)
-                                Spacer()
-                            }
-                            .padding(12)
-                            .background(Color(.systemGray6))
+                            Image(systemName: "arrow.up.arrow.down.circle.fill")
+                                .font(.title2)
+                                .foregroundColor(.gray)
+                                .background(Color(.systemGray6))
+                                .clipShape(Circle())
                         }
+                        .offset(x: -30)
                     }
-                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                    .padding(.horizontal)
-
-                    Button {
-                        trip.swap()
-                    } label: {
-                        Image(systemName: "arrow.up.arrow.down.circle.fill")
-                            .font(.title2)
-                            .foregroundColor(.gray)
-                            .background(Color(.systemGray6))
-                            .clipShape(Circle())
-                    }
-                    .offset(x: -30)
+                    Spacer()
                 }
-                Spacer()
             }
             .navigationTitle("Plan")
             .navigationBarTitleDisplayMode(.inline)

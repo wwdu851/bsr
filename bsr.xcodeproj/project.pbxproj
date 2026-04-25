@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3F54492F9C6A9D00377828 /* RailGeometryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F54482F9C6A9D00377828 /* RailGeometryData.swift */; };
+		3D3F544D2F9C6EBF00377828 /* rail_geometry.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 3D3F544C2F9C6EBF00377828 /* rail_geometry.geojson */; };
 		3D7291B72E60736600CE9955 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA52E547D5D001B1573 /* Station.swift */; };
 		3D7291B82E60736C00CE9955 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA62E547D67001B1573 /* Line.swift */; };
 		3D7291B92E60737000CE9955 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA72E547D6F001B1573 /* Train.swift */; };
@@ -14,6 +16,7 @@
 		3D7291BB2E6073C500CE9955 /* TrainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA42E547D28001B1573 /* TrainData.swift */; };
 		3D7291BC2E6073CA00CE9955 /* StationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA22E547D0B001B1573 /* StationData.swift */; };
 		3D7291BD2E6073CE00CE9955 /* LineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96EA32E547D21001B1573 /* LineData.swift */; };
+		3D9E18A12F9C65D2009E67C8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9E18A02F9C65D2009E67C8 /* MapView.swift */; };
 		3DA227952EB3798500128B0D /* TimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA227942EB3797E00128B0D /* TimeTableView.swift */; };
 		3DDC02272EF7D8CA000A9F36 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC02262EF7D8C5000A9F36 /* TripModel.swift */; };
 		3DE96E5F2E4B3E5E001B1573 /* bsrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE96E5E2E4B3E5E001B1573 /* bsrApp.swift */; };
@@ -42,9 +45,13 @@
 		3DE96E9A2E5319E2001B1573 /* s207.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E7D2E5319E2001B1573 /* s207.json */; };
 		3DE96E9B2E5319E2001B1573 /* s202.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE96E782E5319E2001B1573 /* s202.json */; };
 		3DF952512F013FB10086DD10 /* TimeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF952502F011FCC0086DD10 /* TimeTableViewModel.swift */; };
+		3DF952532F9C90010086DD10 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF952522F9C90010086DD10 /* MapViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D3F54482F9C6A9D00377828 /* RailGeometryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailGeometryData.swift; sourceTree = "<group>"; };
+		3D3F544C2F9C6EBF00377828 /* rail_geometry.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = rail_geometry.geojson; sourceTree = "<group>"; };
+		3D9E18A02F9C65D2009E67C8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3DA227942EB3797E00128B0D /* TimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableView.swift; sourceTree = "<group>"; };
 		3DDC02262EF7D8C5000A9F36 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		3DE96E5B2E4B3E5E001B1573 /* bsr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bsr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +89,7 @@
 		3DE96EA72E547D6F001B1573 /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
 		3DE96EA92E55C5FF001B1573 /* DataImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
 		3DF952502F011FCC0086DD10 /* TimeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewModel.swift; sourceTree = "<group>"; };
+		3DF952522F9C90010086DD10 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -130,6 +138,7 @@
 		3DE96E702E531778001B1573 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3D3F544C2F9C6EBF00377828 /* rail_geometry.geojson */,
 				3DE96E712E5319E2001B1573 /* lines.json */,
 				3DE96E722E5319E2001B1573 /* README.md */,
 				3DE96E732E5319E2001B1573 /* stations.json */,
@@ -177,6 +186,7 @@
 		3DE96E9D2E531C4C001B1573 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3D3F54482F9C6A9D00377828 /* RailGeometryData.swift */,
 				3DE96EA92E55C5FF001B1573 /* DataImporter.swift */,
 				3DE96EA42E547D28001B1573 /* TrainData.swift */,
 				3DE96EA32E547D21001B1573 /* LineData.swift */,
@@ -188,6 +198,7 @@
 		3DE96E9E2E531CBD001B1573 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D9E18A02F9C65D2009E67C8 /* MapView.swift */,
 				3DA227942EB3797E00128B0D /* TimeTableView.swift */,
 				3DE96E6E2E4C83F8001B1573 /* SearchSheetView.swift */,
 				3DE96E602E4B3E5E001B1573 /* ContentView.swift */,
@@ -198,6 +209,7 @@
 		3DF9524F2F011FBE0086DD10 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3DF952522F9C90010086DD10 /* MapViewModel.swift */,
 				3DF952502F011FCC0086DD10 /* TimeTableViewModel.swift */,
 			);
 			path = ViewModels;
@@ -273,6 +285,7 @@
 				3DE96E892E5319E2001B1573 /* s204.json in Resources */,
 				3DE96E8A2E5319E2001B1573 /* s105.json in Resources */,
 				3DE96E8B2E5319E2001B1573 /* s206.json in Resources */,
+				3D3F544D2F9C6EBF00377828 /* rail_geometry.geojson in Resources */,
 				3DE96E8C2E5319E2001B1573 /* s208.json in Resources */,
 				3DE96E8D2E5319E2001B1573 /* trains_index.json in Resources */,
 				3DE96E8E2E5319E2001B1573 /* s201.json in Resources */,
@@ -298,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3F54492F9C6A9D00377828 /* RailGeometryData.swift in Sources */,
 				3DDC02272EF7D8CA000A9F36 /* TripModel.swift in Sources */,
 				3DE96E612E4B3E5E001B1573 /* ContentView.swift in Sources */,
 				3D7291BA2E6073C100CE9955 /* DataImporter.swift in Sources */,
@@ -305,8 +319,10 @@
 				3D7291B72E60736600CE9955 /* Station.swift in Sources */,
 				3D7291BC2E6073CA00CE9955 /* StationData.swift in Sources */,
 				3D7291B92E60737000CE9955 /* Train.swift in Sources */,
+				3D9E18A12F9C65D2009E67C8 /* MapView.swift in Sources */,
 				3DE96E632E4B3E5E001B1573 /* Item.swift in Sources */,
 				3DF952512F013FB10086DD10 /* TimeTableViewModel.swift in Sources */,
+				3DF952532F9C90010086DD10 /* MapViewModel.swift in Sources */,
 				3D7291B82E60736C00CE9955 /* Line.swift in Sources */,
 				3DA227952EB3798500128B0D /* TimeTableView.swift in Sources */,
 				3DE96E6F2E4C83F8001B1573 /* SearchSheetView.swift in Sources */,

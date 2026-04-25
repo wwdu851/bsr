@@ -1,0 +1,14 @@
+{"hypothesisId":"H2","data":{"lineCount":4,"stationCount":24},"runId":"pre-fix","message":"Entering makeLinePaths","timestamp":1777086427255,"location":"MapViewModel.swift:64","sessionId":"0664ee"}
+{"location":"MapViewModel.swift:94","timestamp":1777086427258,"data":{"connectedLineCount":4,"pathCount":4},"runId":"pre-fix","sessionId":"0664ee","message":"Built line paths","hypothesisId":"H4"}
+{"sessionId":"0664ee","timestamp":1777086427258,"data":{"stationCount":24,"lineCount":4},"message":"Entering makeLinePaths","hypothesisId":"H2","location":"MapViewModel.swift:64","runId":"pre-fix"}
+{"sessionId":"0664ee","location":"MapViewModel.swift:94","runId":"pre-fix","hypothesisId":"H4","message":"Built line paths","timestamp":1777086427258,"data":{"connectedLineCount":4,"pathCount":4}}
+{"sessionId":"0664ee","timestamp":1777086427258,"data":{"linePathCount":4,"stationCount":24,"connectedLineCount":4},"message":"Calculated coverage","hypothesisId":"H3","location":"MapViewModel.swift:109","runId":"pre-fix"}
+{"sessionId":"0664ee","timestamp":1777086427258,"data":{"stationCount":24,"lineCount":4},"message":"Entering makeLinePaths","hypothesisId":"H2","location":"MapViewModel.swift:64","runId":"pre-fix"}
+{"sessionId":"0664ee","location":"MapViewModel.swift:94","runId":"pre-fix","hypothesisId":"H4","message":"Built line paths","timestamp":1777086427259,"data":{"connectedLineCount":4,"pathCount":4}}
+{"sessionId":"0664ee","timestamp":1777086427259,"data":{"linePathCount":4,"stationCount":24,"connectedLineCount":4},"message":"Calculated coverage","hypothesisId":"H3","location":"MapViewModel.swift:109","runId":"pre-fix"}
+{"sessionId":"0664ee","timestamp":1777086427259,"data":{"stationCount":24,"lineCount":4},"message":"Entering makeLinePaths","hypothesisId":"H2","location":"MapViewModel.swift:64","runId":"pre-fix"}
+{"sessionId":"0664ee","location":"MapViewModel.swift:94","runId":"pre-fix","hypothesisId":"H4","message":"Built line paths","timestamp":1777086427259,"data":{"connectedLineCount":4,"pathCount":4}}
+{"sessionId":"0664ee","timestamp":1777086427259,"data":{"linePathCount":4,"stationCount":24,"connectedLineCount":4},"message":"Calculated coverage","hypothesisId":"H3","location":"MapViewModel.swift:109","runId":"pre-fix"}
+{"sessionId":"0664ee","timestamp":1777086427259,"data":{"stationCount":24,"lineCount":4},"message":"Entering makeLinePaths","hypothesisId":"H2","location":"MapViewModel.swift:64","runId":"pre-fix"}
+{"sessionId":"0664ee","location":"MapViewModel.swift:94","runId":"pre-fix","hypothesisId":"H4","message":"Built line paths","timestamp":1777086427259,"data":{"connectedLineCount":4,"pathCount":4}}
+{"sessionId":"0664ee","timestamp":1777086427259,"data":{"linePathCount":4,"stationCount":24,"connectedLineCount":4},"message":"Calculated coverage","hypothesisId":"H3","location":"MapViewModel.swift:109","runId":"pre-fix"}
